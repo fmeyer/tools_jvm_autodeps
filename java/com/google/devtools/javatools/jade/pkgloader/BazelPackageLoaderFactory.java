@@ -28,7 +28,7 @@ public class BazelPackageLoaderFactory implements PackageLoaderFactory {
 
   @Override
   public PackageLoader create(Root workspaceDir, Path installBase, Path outputBase) {
-    return BazelPackageLoader.builder(workspaceDir, installBase, outputBase)
+    return BazelPackageLoader.builder(workspaceDir.asPath(), installBase, outputBase)
         .useDefaultSkylarkSemantics()
         .setReporter(REPORTER)
         .setLegacyGlobbingThreads(400)
